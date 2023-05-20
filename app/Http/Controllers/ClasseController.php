@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Classe;
 
-class StudentController extends Controller
+class ClasseController extends Controller
 {
     public function index()
     {

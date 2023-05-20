@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Student;
+use \App\Models\Classe;
 
 class StudentController extends Controller
 {
@@ -14,6 +15,18 @@ class StudentController extends Controller
         return view('students.index', [
             'students' => $students,
         ]);
+    }
+
+    public function detail($id)
+    {
+        $student = Student::find($id);
+        $classe = Classe::find($student->classe_id);
+
+        if ($student === null) {
+            return abort(404);
+        }
+
+        return view('students.detail', ['student' => $student, 'classe' => $classe]);
     }
 
     public function create()
