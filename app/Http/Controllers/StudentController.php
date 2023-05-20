@@ -15,4 +15,21 @@ class StudentController extends Controller
             'students' => $students,
         ]);
     }
+
+    public function create()
+    {
+        return view('students.create');
+    }
+
+    public function store(Request $request)
+    {
+
+        Student::create([
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'user_id' => $request->id,
+        ]);
+
+        return redirect()->route('students.index');
+    }
 }
