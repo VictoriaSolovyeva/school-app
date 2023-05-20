@@ -18,9 +18,11 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'firstName' => $this->faker->sentence,
-            'lastName' => $this->faker->sentence,
-            'user_id' => User::factory(),
+            'last_name' => $this->faker->lastName,
+            'first_name' => $this->faker->firstName,
+            'birth_date' => $this->faker->dateTimeBetween($startDate = '-10 years', $endDate = '-6 years', $timezone = null)->format('d/m/Y'),
+            'address' => $this->faker->address,
+            'classe_id' => $this->faker->numberBetween(1, 3),
         ];
     }
 }

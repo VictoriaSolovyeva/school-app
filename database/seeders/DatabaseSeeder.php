@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use \App\Models\Student;
+use \App\Models\Classe;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,13 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Classe::create(['name' => 'Classe 1']);
+        Classe::create(['name' => 'Classe 2']);
+        Classe::create(['name' => 'Classe 3']);
 
-        Student::factory(10)->create();
+        Student::factory(30)->create();
+
     }
 }

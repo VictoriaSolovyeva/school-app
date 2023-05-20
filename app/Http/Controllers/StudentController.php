@@ -25,9 +25,11 @@ class StudentController extends Controller
     {
 
         Student::create([
-            'firstName' => $request->firstName,
-            'lastName' => $request->lastName,
-            'user_id' => $request->id,
+            'last_name' => $request->lastName,
+            'first_name' => $request->firstName,
+            'birth_date' => $request->birthDate,
+            'address' => $request->address,
+            'classe_id' => $request->classeId,
         ]);
 
         return redirect()->route('students.index');
