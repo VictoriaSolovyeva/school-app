@@ -19,9 +19,11 @@ class ClasseController extends Controller
 
     public function detail($id)
     {
+        $classe = Classe::find($id);
         $students = Student::where('classe_id', $id)->get();
 
         return view('students.index', [
+            'classe' => $classe,
             'students' => $students,
         ]);
 

@@ -4,13 +4,27 @@
 
     <h3><a href="{{ route('index') }}">Retour à l'accueil</a></h3>
 
-    @foreach ($students as $student)
-        <p>
-            <a href="{{ route('students.detail', ['id' => $student->id]) }}">
-                {{ $student -> id }} -
-                {{ $student -> first_name }} {{ $student -> last_name }}
-            </a>
-        </p>
-    @endforeach
+    @if ($classe)
+        <h4>{{ $classe->name }}</h4>
+    @endif
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date de naissance</th>
+            <th>Adresse</th>
+        </tr>
+        @foreach ($students as $student)
+            <tr>
+                <td>{{ $student->id }}</td>
+                <td>{{ $student->last_name }}</td>
+                <td>{{ $student->first_name }}</td>
+                <td>{{ $student->birth_date }}</td>
+                <td>{{ $student->address }}</td>
+            </tr>
+        @endforeach
+    </table>
 
 @endsection

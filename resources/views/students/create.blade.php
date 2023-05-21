@@ -2,19 +2,39 @@
 
 @section('content')
 
+    <h2>Ajouter un élève</h2>
+    <h3><a href="{{ route('index') }}">Retour à l'accueil</a></h3>
+
     <form action="{{ route('students.store') }}" method="POST">
         @csrf
-        <label for="firstName">firstName</label>
-        <input type="text" id="firstName" name="firstName"><br>
-        <label for="lastName">lastName</label>
-        <input type="text" id="lastName" name="lastName"><br>
-        <label for="birthDate">birthDate</label>
-        <input type="date" id="birthDate" name="birthDate"><br>
-        <label for="address">address</label>
-        <input type="text" id="address" name="address"><br>
-        <label for="classeId">classeId</label>
-        <input type="number" min="1" max="3" id="classeId" name="classeId"><br>
-        <button type="submit">Ajouter</button>
+        <div>
+            <label for="lastName">Nom:</label>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+        <div>
+            <label for="firstName">Prénom:</label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+        <div>
+            <label for="birthDate">Date de naissance:</label>
+            <input type="date" id="birthDate" name="birthDate">
+        </div>
+        <div>
+            <label for="address">Adresse:</label>
+            <input type="text" id="address" name="address">
+        </div>
+        <div>
+            <label for="classeId">Classe:</label>
+            <select id="classeId" name="classeId">
+                @foreach($classes as $classe)
+                    <option value="{{ $classe->id }}">{{ $classe->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Ajouter">
+        </div>
     </form>
 
 @endsection

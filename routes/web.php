@@ -19,8 +19,6 @@ Route::get('/classe/{id}', [\App\Http\Controllers\ClasseController::class, 'deta
 
 Route::get('/students', [\App\Http\Controllers\StudentController::class, 'index'])->name('students.index');
 
-Route::get('/students/{id}', [App\Http\Controllers\StudentController::class, 'detail'])->name('students.detail');
-
 Route::get('/students/create', [\App\Http\Controllers\StudentController::class, 'create'])->name('students.create');
 
 Route::post('/students', [\App\Http\Controllers\StudentController::class, 'store'])->name('students.store');

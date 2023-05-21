@@ -13,29 +13,18 @@ class StudentController extends Controller
         $students = Student::all();
 
         return view('students.index', [
+            'classe' => null,
             'students' => $students,
         ]);
     }
 
-    public function detail($id)
-    {
-        if ($id == 'create') {
-            return view('students.create');
-        }
-
-        $student = Student::find($id);
-
-        if ($student === null) {
-            return abort(404);
-        }
-        $classe = Classe::find($student->classe_id);
-
-        return view('students.detail', ['student' => $student, 'classe' => $classe]);
-    }
-
     public function create()
     {
-        return view('students.create');
+        $classes = Classe::all();
+
+        return view('students.create', [
+            'classes' => $classes,
+        ]);
     }
 
     public function store(Request $request)
@@ -47,7 +36,7 @@ class StudentController extends Controller
             'address' => $request->address,
             'classe_id' => $request->classeId,
         ]);
-        // TODO: rediriger vers page de la classe
-        return redirect()->route('students.index');
+
+        return redirect()->route('classe.detail', ['id' => $request->classeId]);
     }
 }
