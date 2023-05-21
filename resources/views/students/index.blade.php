@@ -16,6 +16,9 @@
             <th>Prénom</th>
             <th>Date de naissance</th>
             <th>Adresse</th>
+            @if (!$classe)
+                <th>Classe</th>
+            @endif
         </tr>
         @foreach ($students as $student)
             <tr>
@@ -24,6 +27,9 @@
                 <td>{{ $student->first_name }}</td>
                 <td>{{ $student->birth_date }}</td>
                 <td>{{ $student->address }}</td>
+                @if (!$classe)
+                    <td>{{ $student->classe_id }}</td>
+                @endif
             </tr>
         @endforeach
     </table>
