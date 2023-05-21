@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        Classe::create(['name' => 'Classe 1']);
-        Classe::create(['name' => 'Classe 2']);
-        Classe::create(['name' => 'Classe 3']);
+        Classe::create(['name' => 'Première classe']);
+        Classe::create(['name' => 'Deuxième classe']);
+        Classe::create(['name' => 'Troisième classe']);
 
         Student::factory(30)->create();
 
