@@ -2,11 +2,12 @@
 
 @section('content')
 
-    <h3><a href="{{ route('index') }}">Retour à l'accueil</a></h3>
-
-    @if ($classe)
-        <h4>{{ $classe->name }}</h4>
-    @endif
+    <h3>
+        Liste des élèves
+        @if ($classe)
+            : {{ $classe->name }}
+        @endif
+    </h3>
 
     <table>
         <tr>

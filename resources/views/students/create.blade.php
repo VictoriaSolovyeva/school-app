@@ -2,8 +2,7 @@
 
 @section('content')
 
-    <h2>Ajouter un élève</h2>
-    <h3><a href="{{ route('index') }}">Retour à l'accueil</a></h3>
+    <h3>Ajouter un élève</h3>
 
     <form action="{{ route('students.store') }}" method="POST">
         @csrf

@@ -7,6 +7,8 @@
     <title>School app</title>
 </head>
 <body>
+    <h1>Application de l'école</h1>
+    <h2><a href="{{ route('index') }}">Accueil</a></h2>
     @yield('content')
 </body>
 </html>
