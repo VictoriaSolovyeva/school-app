@@ -3,7 +3,6 @@
 @section('content')
 
     <h3><a href="{{ route('index') }}">Retour à l'accueil</a></h3>
-    <h3><a href="{{ route('students.index') }}">Retour à la liste des élèves</a></h3>
 
     <div>
         <p>{{ $student->first_name }}</p>

@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\ClasseController::class, 'index'])->name('index');
 
+Route::get('/classe/{id}', [\App\Http\Controllers\ClasseController::class, 'detail'])->name('classe.detail');
+
 Route::get('/students', [\App\Http\Controllers\StudentController::class, 'index'])->name('students.index');
 
 Route::get('/students/{id}', [App\Http\Controllers\StudentController::class, 'detail'])->name('students.detail');

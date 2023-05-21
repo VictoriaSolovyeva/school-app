@@ -8,7 +8,11 @@
     <a href="{{ route('students.index') }}">Voir tous les élèves</a><br>
     Voir les élèves d'une classe: <br>
     @foreach ($classes as $classe)
-        <p>{{ $classe -> id }} - {{ $classe -> name }}</p>
+        <p>
+            <a href="{{ route('classe.detail', ['id' => $classe->id]) }}">
+                {{ $classe->name }}
+            </a>
+        </p>
     @endforeach
 
 @endsection

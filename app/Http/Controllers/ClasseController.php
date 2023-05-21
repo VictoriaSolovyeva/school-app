@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Classe;
+use \App\Models\Student;
 
 class ClasseController extends Controller
 {
@@ -14,6 +15,16 @@ class ClasseController extends Controller
         return view('index', [
             'classes' => $classes,
         ]);
+    }
+
+    public function detail($id)
+    {
+        $students = Student::where('classe_id', $id)->get();
+
+        return view('students.index', [
+            'students' => $students,
+        ]);
+
     }
 
 }
